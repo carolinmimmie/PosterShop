@@ -1,0 +1,44 @@
+@use "/src/styles/variables" as v;
+@use "/src/styles/mixins" as m;
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 25px;
+  height: 25px;
+
+  &__hamburger-icon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: start;
+
+    @include m.forSize(desktop) {
+      display: none;
+    }
+  }
+
+  &__menu-items {
+    display: none;
+
+    @include m.forSize(desktop) {
+      display: block;
+    }
+  }
+
+  &__logo {
+    text-align: center;
+
+    a {
+      text-transform: uppercase;
+      color: v.$primary-color;
+      text-decoration: none;
+    }
+  }
+
+  &__cart {
+    font-size: 24px;
+    text-align: right;
+  }
+}

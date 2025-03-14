@@ -1,0 +1,46 @@
+@use "variables" as v;
+@use "mixins" as m;
+footer {
+  background-color: v.$background-color;
+  padding: 66px 0px;
+  div {
+    width: 80%;
+    margin: auto;
+    @include m.forSize(desktop) {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-bottom: 1px solid grey;
+      @include m.forSize(desktop) {
+        border-bottom: none;
+        width: 100%;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+        font-size: 14px;
+        padding-bottom: 16px;
+        li {
+          cursor: pointer;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .footer_copyright {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    margin: 16px;
+  }
+}

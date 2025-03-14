@@ -1,0 +1,33 @@
+@use "/src/styles/variables" as v;
+@use "/src/styles/mixins" as m;
+
+.hamburger-modal {
+  display: block;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: v.$background-color;
+
+  @include m.forSize(desktop) {
+    display: none;
+  }
+
+  &__close-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  &__menu-items {
+    margin-top: 8rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+}

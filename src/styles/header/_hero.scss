@@ -1,0 +1,23 @@
+@use "/src/styles/mixins" as m;
+div {
+  position: relative;
+  @include m.forSize(desktop) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}

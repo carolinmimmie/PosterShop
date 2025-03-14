@@ -1,0 +1,19 @@
+@use "./header/header";
+@use "./header/nav";
+@use "./header/hamburger-modal";
+@use "./header/menu-items";
+@use "./header/hero";
+@use "./footer";
+@use "./home";
+@use "./productcard";
+@use "./button";
+@use "./global";
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}

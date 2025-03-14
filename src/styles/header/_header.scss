@@ -1,0 +1,14 @@
+@use "/src/styles/variables" as v;
+@use "/src/styles/mixins" as m;
+
+.header {
+  background-color: v.$background-color;
+
+  &__hero-component {
+    display: none;
+
+    @include m.forSize(desktop) {
+      display: block;
+    }
+  }
+}

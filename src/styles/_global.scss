@@ -1,0 +1,45 @@
+$h1-h4-font-family: "Poppins", sans-serif;
+$letter-spacing: 0.5px;
+
+$h1-font-size: 26px;
+$h1-font-weight: 800;
+
+$h2-font-size: 22px;
+$h2-font-weight: 600;
+
+$h3-font-size: 18px;
+$h3-font-weight: 500;
+
+$h4-font-size: 12px;
+$h4-font-weight: 400;
+
+h1 {
+  font-weight: $h1-font-weight;
+  letter-spacing: $letter-spacing;
+  font-size: $h1-font-size;
+  $h1-h4-font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  font-weight: $h2-font-weight;
+  letter-spacing: $letter-spacing;
+  font-family: $h1-h4-font-family;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: $h3-font-size;
+  font-weight: $h3-font-weight;
+  letter-spacing: $letter-spacing;
+  font-family: $h1-h4-font-family;
+  text-transform: uppercase;
+  margin: 8px 0px;
+}
+
+h4 {
+  font-size: $h4-font-size;
+  font-weight: $h4-font-weight;
+  letter-spacing: $letter-spacing;
+  font-family: $h1-h4-font-family;
+}
