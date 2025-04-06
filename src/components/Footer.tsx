@@ -33,7 +33,9 @@ export const Footer = () => {
           </ul>
         </section>
       </div>
-      <div className="footer_copyright">Copyright 2025, PosterShop</div>
+      <div className="footer_copyright">
+        <p>Copyright 2025, PosterShop</p>
+      </div>
     </footer>
   );
 };

@@ -1,59 +1,178 @@
-import { useState } from "react";
-import { Product, SizeOption } from "../models/Product";
+import { useContext, useState } from "react";
+import { CartItem, Product, SizeOption } from "../models/Product";
 import { Button } from "./Button";
+import Cart from "./Cart";
+import { CartContext } from "../contexts/CartContext";
 interface IProductDetails {
   product: Product;
 }
 
 const ProductDetails = ({ product }: IProductDetails) => {
-  const [selectedSize, setSelectedSize] = useState<string>(
-    product.sizes[0].size
+  const { cartVisible, toggleCartVisibility } = useContext(CartContext);
+  const [selectedSize, setSelectedSize] = useState<SizeOption>(
+    product.sizes[0]
   );
-  const [price, setPrice] = useState<number>(product.sizes[0].price);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  // const [cartVisible, setCartVisible] = useState<boolean>(false);
 
   const handleSizeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedSize = event.target.value;
-    setSelectedSize(selectedSize);
+    const size = event.target.value; // Hämta den valda storleken som en string
 
     const selectedOption = product.sizes.find(
-      (sizeOption: SizeOption) => sizeOption.size === selectedSize
+      (sizeOption) => sizeOption.size === size // Hitta objektet som matchar storleken
     );
+
     if (selectedOption) {
-      setPrice(selectedOption.price);
+      setSelectedSize(selectedOption); // Uppdatera den valda storleken i state
     }
   };
+
+  const addToCart = () => {
+    setCartItems((prevCart) => {
+      const existingItem = prevCart.find(
+        (item) =>
+          item.product.id === product.id &&
+          item.selectedSize.size === selectedSize.size
+      );
+
+      if (existingItem) {
+        return prevCart.map((item) => {
+          if (
+            item.product.id === product.id &&
+            item.selectedSize.size === selectedSize.size
+          ) {
+            return new CartItem(
+              item.product,
+              item.quantity + 1,
+              item.selectedSize
+            );
+          } else {
+            return item;
+          }
+        });
+      } else {
+        return [...prevCart, new CartItem(product, 1, selectedSize)];
+      }
+    });
+
+    toggleCartVisibility();
+  };
+
+  //MINSKA
+  const handleDecrease = (item: CartItem) => {
+    setCartItems((prevCart) => {
+      // Om kvantiteten är större än eller lika med 2, minska den
+      if (item.quantity >= 2) {
+        return prevCart.map((cartItem) => {
+          if (
+            cartItem.product.id === item.product.id &&
+            cartItem.selectedSize.size === item.selectedSize.size
+          ) {
+            return new CartItem(
+              cartItem.product,
+              cartItem.quantity - 1,
+              cartItem.selectedSize
+            );
+          }
+          return cartItem;
+        });
+      }
+
+      // Om kvantiteten är mindre än 2, ta bort produkten från varukorgen
+      return prevCart.filter((cartItem) => {
+        if (
+          cartItem.product.id !== item.product.id ||
+          cartItem.selectedSize.size !== item.selectedSize.size
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    });
+  };
+
+  //ÖKA
+  const handleIncrease = (item: CartItem) => {
+    setCartItems((prevCart) => {
+      return prevCart.map((cartItem) => {
+        if (
+          cartItem.product.id === item.product.id &&
+          cartItem.selectedSize.size === item.selectedSize.size
+        ) {
+          return new CartItem(
+            cartItem.product,
+            cartItem.quantity + 1,
+            cartItem.selectedSize
+          );
+        } else {
+          return cartItem;
+        }
+      });
+    });
+  };
+
+  const handleRemove = (item: CartItem) => {
+    setCartItems((prevCart) => {
+      return prevCart.filter((cartItem: CartItem) => {
+        if (
+          cartItem.product.id !== item.product.id ||
+          cartItem.selectedSize.size !== item.selectedSize.size
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    });
+  };
+  console.log(cartItems);
   return (
-    <div className="productdetails">
-      <div className="productdetails__imgcontainer">
-        <img src={product.imageUrl} alt={product.title} />
-      </div>
-      <div className="productdetails__toptext">
-        <h3>{product.title}</h3>
-        <p>{price} kr</p>
-      </div>
-      <div className="productdetails__sizes">
-        <form>
-          <label htmlFor="sizes">Select size</label>
-          <select
-            name="sizes"
-            id="sizes"
-            value={selectedSize}
-            onChange={handleSizeChange}
-          >
-            {product.sizes.map((sizeOption) => (
-              <option key={product.id} value={sizeOption.size}>
-                {sizeOption.size}
-              </option>
-            ))}
-          </select>
-        </form>
-        <Button>Add to bag</Button>
-        <div className="productdetails__description">
-          <h4>Description</h4>
-          <p>{product.description}</p>
+    <>
+      <div className="productdetails">
+        <div className="productdetails__imgcontainer">
+          <img src={product.imageUrl} alt={product.title} />
+        </div>
+        <div className="productdetails__textcontainer">
+          <div className="productdetails__textcontainer-toptext">
+            <h3>{product.title}</h3>
+            <p>{selectedSize.price} kr</p>
+          </div>
+          <div className="productdetails__textcontainer-sizes">
+            <label htmlFor="sizes">Select size</label>
+            <select
+              name="sizes"
+              id="sizes"
+              value={selectedSize.size}
+              onChange={handleSizeChange}
+            >
+              {product.sizes.map((sizeOption) => (
+                <option
+                  key={`${product.id}-${sizeOption.size}`}
+                  value={sizeOption.size}
+                >
+                  {sizeOption.size}
+                </option>
+              ))}
+            </select>
+            <Button onClick={addToCart}>Add to bag</Button>
+          </div>
+          <div className="productdetails__textcontainer-description">
+            <h4>Description</h4>
+            <p>{product.description}</p>
+          </div>
         </div>
       </div>
-    </div>
+      {cartVisible && (
+        <Cart
+          closeCart={toggleCartVisibility}
+          cartItems={cartItems}
+          handleDecrease={handleDecrease}
+          handleIncrease={handleIncrease}
+          handleRemove={handleRemove}
+        />
+      )}
+    </>
   );
 };
 

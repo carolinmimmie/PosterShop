@@ -1,8 +1,14 @@
-import { ReactNode } from "react";
+import React from "react";
 
-interface IButton {
-  children: ReactNode;
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void; // 🟢 Lägg till onClick som en prop
 }
-export const Button = ({ children }: IButton) => {
-  return <button>{children}</button>;
+
+export const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+  return (
+    <button onClick={onClick} className="button">
+      {children}
+    </button>
+  );
 };

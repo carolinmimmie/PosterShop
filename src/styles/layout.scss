@@ -8,6 +8,12 @@
 @use "./productcard";
 @use "./button";
 @use "./global";
+@use "./productdetails";
+@use "./slider";
+@use "./twoimagedisplay";
+@use "./threeimagedisplay";
+@use "./sectiondivider";
+@use "./cart";
 * {
   margin: 0px;
   padding: 0px;

@@ -1,0 +1,46 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.twoimagedisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px 0;
+
+  @include m.forSize(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__container {
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+
+    @include m.forSize(desktop) {
+      width: 48%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include m.forSize(desktop) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}

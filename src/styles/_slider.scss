@@ -1,0 +1,52 @@
+.slider {
+  position: relative;
+
+  &__container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+  &__cards {
+    display: flex;
+    gap: 6px;
+  }
+
+  &__card {
+    display: flex;
+    flex: 0 0 150px;
+    width: 150px;
+    height: 260px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    z-index: 10;
+    color: black;
+    font-size: 0.8rem;
+    width: 20px; // Fasta storleken på div:en för pilarna
+    height: 20px; // Fasta höjden på div:en för pilarna
+
+    &--left {
+      left: -42px; // Justera pilens position från vänster'
+    }
+
+    &--right {
+      right: -44px; // Justera pilens position från höger
+    }
+  }
+}

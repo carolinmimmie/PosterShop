@@ -3,11 +3,12 @@ import { Product } from "../models/Product";
 
 interface IProductCard {
   product: Product;
+  className?: string;
 }
-export const ProductCard = ({ product }: IProductCard) => {
+export const ProductCard = ({ product, className }: IProductCard) => {
   return (
     <Link to={`/product/${product.id}`} className="productcard__link">
-      <div key={product.id} className="productcard__container">
+      <div key={product.id} className={`productcard__container ${className}`}>
         <div className="productcard__container-img">
           <img src={product.imageUrl} alt={product.title} />
         </div>

@@ -365,4 +365,56 @@ export const products: Product[] = [
       new SizeOption("70x100", 38.99),
     ]
   ),
+  new Product(
+    29,
+    "Retro Swimmers",
+    "Three swimmers on the beavh.",
+    "/src/assets/swimmers.jpg",
+    true,
+    false,
+    [
+      new SizeOption("30x40", 18.99),
+      new SizeOption("50x70", 28.99),
+      new SizeOption("70x100", 38.99),
+    ]
+  ),
+  new Product(
+    30,
+    "Eucalyptus",
+    "Poster of a Eucalyptus",
+    "/src/assets/greenflower.jpg",
+    true,
+    false,
+    [
+      new SizeOption("30x40", 18.99),
+      new SizeOption("50x70", 28.99),
+      new SizeOption("70x100", 38.99),
+    ]
+  ),
+  new Product(
+    31,
+    "Barcelona",
+    "Barcelona cityscape",
+    "/src/assets/barcelona.jpg",
+    true,
+    false,
+    [
+      new SizeOption("30x40", 18.99),
+      new SizeOption("50x70", 28.99),
+      new SizeOption("70x100", 38.99),
+    ]
+  ),
+  new Product(
+    32,
+    "Palms",
+    "Palm trees in the sunset",
+    "/src/assets/clouds.avif",
+    true,
+    false,
+    [
+      new SizeOption("30x40", 18.99),
+      new SizeOption("50x70", 28.99),
+      new SizeOption("70x100", 38.99),
+    ]
+  ),
 ];

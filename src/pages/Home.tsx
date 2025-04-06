@@ -1,23 +1,19 @@
-import { ProductCard } from "../components/ProductCard";
-import { products } from "../data/products";
+import SectionDivider from "../components/SectionDivider";
+import { Slider } from "../components/Slider";
+import ThreeImageDisplay from "../components/ThreeImageDisplay";
+import TwoImageDisplay from "../components/TwoImageDisplay";
 
 export const Home = () => {
   return (
-    <>
-      <section className="home">
-        <div className="home__newarrivals">
-          <h2>New Arrivals</h2>
-        </div>
-        <div className="home__viewall">
-          <div></div>
-          <span>View all</span>
-        </div>
-      </section>
-      <div className="productcard">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </>
+    <section className="home">
+      <h2>Tavlor vi gillar</h2>
+      <Slider></Slider>
+      <TwoImageDisplay></TwoImageDisplay>
+      <h2>Nyheter</h2>
+      <Slider></Slider>
+      <ThreeImageDisplay></ThreeImageDisplay>
+      <div className="divider"></div>
+      <SectionDivider></SectionDivider>
+    </section>
   );
 };

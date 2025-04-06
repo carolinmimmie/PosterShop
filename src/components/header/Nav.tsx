@@ -2,11 +2,15 @@ import { AiOutlineShopping } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { MenuItems } from "./MenuItems";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { HamburgerModal } from "./HamburgerModal";
+import { CartContext } from "../../contexts/CartContext";
+import Cart from "../Cart";
 
 export const Nav = () => {
+  const { cartVisible, toggleCartVisibility } = useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
+  const cartCount = 1;
 
   return (
     <nav className="nav">
@@ -21,10 +25,27 @@ export const Nav = () => {
           <NavLink to={"/"}>PosterShop</NavLink>
         </h1>
       </div>
-      <div className="nav__cart">
+      <div onClick={toggleCartVisibility} className="nav__cart">
+        <span>{cartCount}</span>
         <AiOutlineShopping />
       </div>
       {isOpen && <HamburgerModal closeModal={() => setIsOpen(false)} />}
+      {/* Visa Cart-komponenten om varukorgen är synlig */}
+      {cartVisible && (
+        <Cart
+          closeCart={toggleCartVisibility}
+          cartItems={[]}
+          handleDecrease={function (): void {
+            throw new Error("Function not implemented.");
+          }}
+          handleIncrease={function (): void {
+            throw new Error("Function not implemented.");
+          }}
+          handleRemove={function (): void {
+            throw new Error("Function not implemented.");
+          }}
+        />
+      )}
     </nav>
   );
 };

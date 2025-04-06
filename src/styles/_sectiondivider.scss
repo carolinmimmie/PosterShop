@@ -1,0 +1,15 @@
+.section-divider {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    h3 {
+    }
+    p {
+    }
+  }
+}
