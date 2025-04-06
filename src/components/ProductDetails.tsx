@@ -12,8 +12,9 @@ const ProductDetails = ({ product }: IProductDetails) => {
   const [selectedSize, setSelectedSize] = useState<SizeOption>(
     product.sizes[0]
   );
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  // const [cartVisible, setCartVisible] = useState<boolean>(false);
+  const [cartItems, setCartItems] = useState<CartItem[]>(
+    JSON.parse(localStorage.getItem("cartItemsLocalStorage") || "[]")
+  );
 
   const handleSizeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const size = event.target.value; // Hämta den valda storleken som en string
@@ -34,9 +35,9 @@ const ProductDetails = ({ product }: IProductDetails) => {
           item.product.id === product.id &&
           item.selectedSize.size === selectedSize.size
       );
-
+      let updatedCartItems;
       if (existingItem) {
-        return prevCart.map((item) => {
+        updatedCartItems = prevCart.map((item) => {
           if (
             item.product.id === product.id &&
             item.selectedSize.size === selectedSize.size
@@ -51,8 +52,19 @@ const ProductDetails = ({ product }: IProductDetails) => {
           }
         });
       } else {
-        return [...prevCart, new CartItem(product, 1, selectedSize)];
+        updatedCartItems = [
+          ...prevCart,
+          new CartItem(product, 1, selectedSize),
+        ];
       }
+
+      // Spara den uppdaterade varukorgen i localStorage
+      localStorage.setItem(
+        "cartItemsLocalStorage",
+        JSON.stringify(updatedCartItems)
+      );
+
+      return updatedCartItems; // Returnera den uppdaterade varukorgen
     });
 
     toggleCartVisibility();

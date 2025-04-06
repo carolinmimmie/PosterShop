@@ -51,11 +51,17 @@ const Cart = ({
                     <button onClick={() => handleRemove(item)}>x</button>
                   </div>
                 </div>
-                <div>Subtotal:{item.selectedSize.price * item.quantity}</div>
               </div>
             ))}
           </div>
         )}
+        <div>
+          Subtotal:
+          {cartItems.reduce(
+            (total, item) => total + item.selectedSize.price * item.quantity,
+            0
+          )}
+        </div>
       </div>
     </div>
   );
