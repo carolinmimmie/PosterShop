@@ -8,13 +8,14 @@ interface IProductDetails {
 }
 
 const ProductDetails = ({ product }: IProductDetails) => {
-  const { cartVisible, toggleCartVisibility } = useContext(CartContext);
+  const { cartVisible, toggleCartVisibility, cartItems, setCartItems } =
+    useContext(CartContext);
   const [selectedSize, setSelectedSize] = useState<SizeOption>(
     product.sizes[0]
   );
-  const [cartItems, setCartItems] = useState<CartItem[]>(
-    JSON.parse(localStorage.getItem("cartItemsLocalStorage") || "[]")
-  );
+  // const [cartItems, setCartItems] = useState<CartItem[]>(
+  //   JSON.parse(localStorage.getItem("cartItemsLocalStorage") || "[]")
+  // );
 
   const handleSizeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const size = event.target.value; // Hämta den valda storleken som en string

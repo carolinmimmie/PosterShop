@@ -8,9 +8,14 @@ import { CartContext } from "../../contexts/CartContext";
 import Cart from "../Cart";
 
 export const Nav = () => {
-  const { cartVisible, toggleCartVisibility } = useContext(CartContext);
+  //   <h2>
+  //   Shopping Cart (
+  //   {cartItems.reduce((total, item) => total + item.quantity, 0)})
+  // </h2>
+  const { cartVisible, toggleCartVisibility, cartItems } =
+    useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
-  const cartCount = 1;
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <nav className="nav">
