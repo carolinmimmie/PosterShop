@@ -3,19 +3,20 @@ import { CartItem, Product, SizeOption } from "../models/Product";
 import { Button } from "./Button";
 import Cart from "./Cart";
 import { CartContext } from "../contexts/CartContext";
+import Checkout from "./Checkout";
 interface IProductDetails {
   product: Product;
 }
 
 const ProductDetails = ({ product }: IProductDetails) => {
-  const { cartVisible, toggleCartVisibility, cartItems, setCartItems } =
+  // const [showCheckout, setShowCheckout] = useState(false);
+  const { cartVisible, toggleCartVisibility, cartItems, setCartItems,  handleDecrease,
+        handleIncrease,
+        handleRemove,openCheckout,  showCheckout, } =
     useContext(CartContext);
   const [selectedSize, setSelectedSize] = useState<SizeOption>(
     product.sizes[0]
   );
-  // const [cartItems, setCartItems] = useState<CartItem[]>(
-  //   JSON.parse(localStorage.getItem("cartItemsLocalStorage") || "[]")
-  // );
 
   const handleSizeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const size = event.target.value; // Hämta den valda storleken som en string
@@ -72,73 +73,80 @@ const ProductDetails = ({ product }: IProductDetails) => {
   };
 
   //MINSKA
-  const handleDecrease = (item: CartItem) => {
-    setCartItems((prevCart) => {
-      // Om kvantiteten är större än eller lika med 2, minska den
-      if (item.quantity >= 2) {
-        return prevCart.map((cartItem) => {
-          if (
-            cartItem.product.id === item.product.id &&
-            cartItem.selectedSize.size === item.selectedSize.size
-          ) {
-            return new CartItem(
-              cartItem.product,
-              cartItem.quantity - 1,
-              cartItem.selectedSize
-            );
-          }
-          return cartItem;
-        });
-      }
+  // const handleDecrease = (item: CartItem) => {
+  //   setCartItems((prevCart) => {
+  //     // Om kvantiteten är större än eller lika med 2, minska den
+  //     if (item.quantity >= 2) {
+  //       return prevCart.map((cartItem) => {
+  //         if (
+  //           cartItem.product.id === item.product.id &&
+  //           cartItem.selectedSize.size === item.selectedSize.size
+  //         ) {
+  //           return new CartItem(
+  //             cartItem.product,
+  //             cartItem.quantity - 1,
+  //             cartItem.selectedSize
+  //           );
+  //         }
+  //         return cartItem;
+  //       });
+  //     }
 
-      // Om kvantiteten är mindre än 2, ta bort produkten från varukorgen
-      return prevCart.filter((cartItem) => {
-        if (
-          cartItem.product.id !== item.product.id ||
-          cartItem.selectedSize.size !== item.selectedSize.size
-        ) {
-          return true;
-        } else {
-          return false;
-        }
-      });
-    });
-  };
+  //     // Om kvantiteten är mindre än 2, ta bort produkten från varukorgen
+  //     return prevCart.filter((cartItem) => {
+  //       if (
+  //         cartItem.product.id !== item.product.id ||
+  //         cartItem.selectedSize.size !== item.selectedSize.size
+  //       ) {
+  //         return true;
+  //       } else {
+  //         return false;
+  //       }
+  //     });
+  //   });
+  // };
 
-  //ÖKA
-  const handleIncrease = (item: CartItem) => {
-    setCartItems((prevCart) => {
-      return prevCart.map((cartItem) => {
-        if (
-          cartItem.product.id === item.product.id &&
-          cartItem.selectedSize.size === item.selectedSize.size
-        ) {
-          return new CartItem(
-            cartItem.product,
-            cartItem.quantity + 1,
-            cartItem.selectedSize
-          );
-        } else {
-          return cartItem;
-        }
-      });
-    });
-  };
+  // //ÖKA
+  // const handleIncrease = (item: CartItem) => {
+  //   setCartItems((prevCart) => {
+  //     return prevCart.map((cartItem) => {
+  //       if (
+  //         cartItem.product.id === item.product.id &&
+  //         cartItem.selectedSize.size === item.selectedSize.size
+  //       ) {
+  //         return new CartItem(
+  //           cartItem.product,
+  //           cartItem.quantity + 1,
+  //           cartItem.selectedSize
+  //         );
+  //       } else {
+  //         return cartItem;
+  //       }
+  //     });
+  //   });
+  // };
 
-  const handleRemove = (item: CartItem) => {
-    setCartItems((prevCart) => {
-      return prevCart.filter((cartItem: CartItem) => {
-        if (
-          cartItem.product.id !== item.product.id ||
-          cartItem.selectedSize.size !== item.selectedSize.size
-        ) {
-          return true;
-        } else {
-          return false;
-        }
-      });
-    });
-  };
+  // const handleRemove = (item: CartItem) => {
+  //   setCartItems((prevCart) => {
+  //     return prevCart.filter((cartItem: CartItem) => {
+  //       if (
+  //         cartItem.product.id !== item.product.id ||
+  //         cartItem.selectedSize.size !== item.selectedSize.size
+  //       ) {
+  //         return true;
+  //       } else {
+  //         return false;
+  //       }
+  //     });
+  //   });
+  // };
+
+  // const openCheckout = () => {
+  //   setShowCheckout(true);
+  //   if (cartVisible) {
+  //     toggleCartVisibility();
+  //   }
+  // };
   console.log(cartItems);
   return (
     <>
@@ -176,9 +184,19 @@ const ProductDetails = ({ product }: IProductDetails) => {
           </div>
         </div>
       </div>
-      {cartVisible && (
+      {cartVisible && !showCheckout && (
         <Cart
           closeCart={toggleCartVisibility}
+          cartItems={cartItems}
+          handleDecrease={handleDecrease}
+          handleIncrease={handleIncrease}
+          handleRemove={handleRemove}
+          openCheckout={openCheckout}
+        />
+      )}
+      {/* Visa checkout separat */}
+      {showCheckout && (
+        <Checkout
           cartItems={cartItems}
           handleDecrease={handleDecrease}
           handleIncrease={handleIncrease}

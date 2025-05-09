@@ -1,5 +1,7 @@
 import { IoCloseOutline } from "react-icons/io5";
 import { CartItem } from "../models/Product"; // Importera rätt typ
+import { Button } from "./Button";
+import CartItems from "./CartItems";
 
 interface ICart {
   cartItems: CartItem[];
@@ -7,6 +9,7 @@ interface ICart {
   handleDecrease: (item: CartItem) => void;
   handleIncrease: (item: CartItem) => void;
   handleRemove: (item: CartItem) => void;
+  openCheckout: () => void;
 }
 
 const Cart = ({
@@ -15,6 +18,7 @@ const Cart = ({
   handleDecrease,
   handleIncrease,
   handleRemove,
+  openCheckout,
 }: ICart) => {
   return (
     <div className="cart__container">
@@ -32,36 +36,31 @@ const Cart = ({
         {cartItems.length === 0 ? (
           <p className="cart__empty-message">Your cart is empty.</p>
         ) : (
-          <div className="cart__main">
-            {cartItems.map((item, index) => (
-              <div key={index} className="cart__item">
-                <div className="cart__item-img-container">
-                  <img src={item.product.imageUrl} alt={item.product.title} />
-                </div>
-                <div className="cart__item-details">
-                  <h3 className="cart__item-title">{item.product.title}</h3>
-                  <p className="cart__item-size">{item.selectedSize.size}</p>
-                  <p className="cart__item-size">
-                    {item.selectedSize.price * item.quantity}
-                  </p>
-                  <div className="cart__item-buttons">
-                    <button onClick={() => handleDecrease(item)}>-</button>
-                    <div className="cart__item-quantity">{item.quantity}</div>
-                    <button onClick={() => handleIncrease(item)}>+</button>
-                    <button onClick={() => handleRemove(item)}>x</button>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <CartItems
+            cartItems={cartItems}
+            handleDecrease={handleDecrease}
+            handleIncrease={handleIncrease}
+            handleRemove={handleRemove}
+          ></CartItems>
+        )}
+        {cartItems.length === 0 ? (
+          <p>{""}</p>
+        ) : (
+          <div className="cart__footer">
+            <div>
+              Subtotal:
+              {cartItems.reduce(
+                (total, item) =>
+                  total + item.selectedSize.price * item.quantity,
+                0
+              )}
+            </div>
+
+            <div onClick={openCheckout} className="button">
+              <Button>Checkkout</Button>
+            </div>
           </div>
         )}
-        <div>
-          Subtotal:
-          {cartItems.reduce(
-            (total, item) => total + item.selectedSize.price * item.quantity,
-            0
-          )}
-        </div>
       </div>
     </div>
   );

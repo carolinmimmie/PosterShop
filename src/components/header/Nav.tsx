@@ -8,10 +8,6 @@ import { CartContext } from "../../contexts/CartContext";
 import Cart from "../Cart";
 
 export const Nav = () => {
-  //   <h2>
-  //   Shopping Cart (
-  //   {cartItems.reduce((total, item) => total + item.quantity, 0)})
-  // </h2>
   const { cartVisible, toggleCartVisibility, cartItems } =
     useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +27,8 @@ export const Nav = () => {
         </h1>
       </div>
       <div onClick={toggleCartVisibility} className="nav__cart">
-        <span>{cartCount}</span>
+        {cartItems.length === 0 ? <div></div> : <span>{cartCount}</span>}
+
         <AiOutlineShopping />
       </div>
       {isOpen && <HamburgerModal closeModal={() => setIsOpen(false)} />}
@@ -39,7 +36,7 @@ export const Nav = () => {
       {cartVisible && (
         <Cart
           closeCart={toggleCartVisibility}
-          cartItems={[]}
+          cartItems={cartItems}
           handleDecrease={function (): void {
             throw new Error("Function not implemented.");
           }}
@@ -47,6 +44,9 @@ export const Nav = () => {
             throw new Error("Function not implemented.");
           }}
           handleRemove={function (): void {
+            throw new Error("Function not implemented.");
+          }}
+          openCheckout={function (): void {
             throw new Error("Function not implemented.");
           }}
         />

@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../models/Product";
 import { products } from "../data/products";

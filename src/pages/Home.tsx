@@ -6,10 +6,10 @@ import TwoImageDisplay from "../components/TwoImageDisplay";
 export const Home = () => {
   return (
     <section className="home">
-      <h2>Tavlor vi gillar</h2>
+      <h2>OUR FAVORITES</h2>
       <Slider></Slider>
       <TwoImageDisplay></TwoImageDisplay>
-      <h2>Nyheter</h2>
+      <h2>NEWS</h2>
       <Slider></Slider>
       <ThreeImageDisplay></ThreeImageDisplay>
       <div className="divider"></div>

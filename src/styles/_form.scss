@@ -1,0 +1,29 @@
+.form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 65px 0px;
+  h3 {
+    margin: 15px 0px;
+  }
+
+  form {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+      padding: 18px;
+      border: none;
+      border-bottom: 1px solid grey;
+    }
+  }
+  .button {
+    padding: 18px 0px;
+    margin-top: 15px;
+    width: 100%;
+  }
+}
