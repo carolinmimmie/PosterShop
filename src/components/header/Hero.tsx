@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="hero">
       <img
         className="hero__img"
-        src="/public/assets/posterwall.jpg"
+        src="/assets/posterwall.jpg"
         alt="big hero image on a posterwall"
       />
       <div className="button">
