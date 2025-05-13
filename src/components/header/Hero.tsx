@@ -1,6 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { Button } from "../Button";
-
 const Hero = () => {
   return (
     <div className="hero">
@@ -11,7 +9,6 @@ const Hero = () => {
       />
       <div className="button">
         <NavLink to={"/products"}>
-          <Button>Shop posters here</Button>
         </NavLink>
       </div>
     </div>
