@@ -1,5 +1,5 @@
 import { IoCloseOutline } from "react-icons/io5";
-import { CartItem } from "../models/Product"; // Importera rätt typ
+import { CartItem } from "../models/Product";
 import { Button } from "./Button";
 import CartItems from "./CartItems";
 
@@ -48,7 +48,7 @@ const Cart = ({
         ) : (
           <div className="cart__footer">
             <div>
-              Subtotal:
+              Subtotal: 
               {cartItems.reduce(
                 (total, item) =>
                   total + item.selectedSize.price * item.quantity,
