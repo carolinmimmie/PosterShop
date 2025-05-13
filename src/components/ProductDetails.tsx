@@ -9,7 +9,6 @@ interface IProductDetails {
 }
 
 const ProductDetails = ({ product }: IProductDetails) => {
-  // const [showCheckout, setShowCheckout] = useState(false);
   const { cartVisible, toggleCartVisibility, cartItems, setCartItems,  handleDecrease,
         handleIncrease,
         handleRemove,openCheckout,  showCheckout, } =
@@ -72,81 +71,6 @@ const ProductDetails = ({ product }: IProductDetails) => {
     toggleCartVisibility();
   };
 
-  //MINSKA
-  // const handleDecrease = (item: CartItem) => {
-  //   setCartItems((prevCart) => {
-  //     // Om kvantiteten är större än eller lika med 2, minska den
-  //     if (item.quantity >= 2) {
-  //       return prevCart.map((cartItem) => {
-  //         if (
-  //           cartItem.product.id === item.product.id &&
-  //           cartItem.selectedSize.size === item.selectedSize.size
-  //         ) {
-  //           return new CartItem(
-  //             cartItem.product,
-  //             cartItem.quantity - 1,
-  //             cartItem.selectedSize
-  //           );
-  //         }
-  //         return cartItem;
-  //       });
-  //     }
-
-  //     // Om kvantiteten är mindre än 2, ta bort produkten från varukorgen
-  //     return prevCart.filter((cartItem) => {
-  //       if (
-  //         cartItem.product.id !== item.product.id ||
-  //         cartItem.selectedSize.size !== item.selectedSize.size
-  //       ) {
-  //         return true;
-  //       } else {
-  //         return false;
-  //       }
-  //     });
-  //   });
-  // };
-
-  // //ÖKA
-  // const handleIncrease = (item: CartItem) => {
-  //   setCartItems((prevCart) => {
-  //     return prevCart.map((cartItem) => {
-  //       if (
-  //         cartItem.product.id === item.product.id &&
-  //         cartItem.selectedSize.size === item.selectedSize.size
-  //       ) {
-  //         return new CartItem(
-  //           cartItem.product,
-  //           cartItem.quantity + 1,
-  //           cartItem.selectedSize
-  //         );
-  //       } else {
-  //         return cartItem;
-  //       }
-  //     });
-  //   });
-  // };
-
-  // const handleRemove = (item: CartItem) => {
-  //   setCartItems((prevCart) => {
-  //     return prevCart.filter((cartItem: CartItem) => {
-  //       if (
-  //         cartItem.product.id !== item.product.id ||
-  //         cartItem.selectedSize.size !== item.selectedSize.size
-  //       ) {
-  //         return true;
-  //       } else {
-  //         return false;
-  //       }
-  //     });
-  //   });
-  // };
-
-  // const openCheckout = () => {
-  //   setShowCheckout(true);
-  //   if (cartVisible) {
-  //     toggleCartVisibility();
-  //   }
-  // };
   console.log(cartItems);
   return (
     <>

@@ -5,7 +5,7 @@ const TwoImageDisplay = () => {
     <div className="twoimagedisplay">
       <div className="twoimagedisplay__container">
         <div className="twoimagedisplay__img">
-          <img src="src/assets/barcelona.jpg" alt="Barcelona cityscape" />
+          <img src="public/assets/barcelona.jpg" alt="Barcelona cityscape" />
         </div>
         <div className="twoimagedisplay__text">
           <h3>Photo Art</h3>
@@ -15,7 +15,7 @@ const TwoImageDisplay = () => {
 
       <div className="twoimagedisplay__container">
         <div className="twoimagedisplay__img">
-          <img src="src/assets/palms.jpg" alt="Palm trees in the sunset" />
+          <img src="public/assets/palms.jpg" alt="Palm trees in the sunset" />
         </div>
 
         <div className="twoimagedisplay__text">

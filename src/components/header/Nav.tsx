@@ -8,7 +8,10 @@ import { CartContext } from "../../contexts/CartContext";
 import Cart from "../Cart";
 
 export const Nav = () => {
-  const { cartVisible, toggleCartVisibility, cartItems } =
+  const { cartVisible, toggleCartVisibility, cartItems, 
+      handleDecrease,
+        handleIncrease,
+        handleRemove,openCheckout,  showCheckout, } =
     useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
@@ -33,22 +36,14 @@ export const Nav = () => {
       </div>
       {isOpen && <HamburgerModal closeModal={() => setIsOpen(false)} />}
       {/* Visa Cart-komponenten om varukorgen är synlig */}
-      {cartVisible && (
+      {cartVisible && !showCheckout && (
         <Cart
           closeCart={toggleCartVisibility}
           cartItems={cartItems}
-          handleDecrease={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-          handleIncrease={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-          handleRemove={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-          openCheckout={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          handleDecrease={handleDecrease}
+          handleIncrease={handleIncrease}
+          handleRemove={handleRemove}
+          openCheckout={openCheckout}
         />
       )}
     </nav>
