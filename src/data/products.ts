@@ -5,7 +5,7 @@ export const products: Product[] = [
     1,
     "Pink Sky Poster",
     "A stunning sky with soft pink hues at sunset.",
-    "/public/assets/airballoons.jpg",
+    "/assets/airballoons.jpg",
     true,
     true,
     [
@@ -18,7 +18,7 @@ export const products: Product[] = [
     2,
     "Lighthouse Poster",
     "A classic lighthouse standing tall against the sea.",
-    "/public/assets/lighthouse.avif",
+    "/assets/lighthouse.avif",
     true,
     false,
     [
@@ -31,7 +31,7 @@ export const products: Product[] = [
     3,
     "Washington Poster",
     "A beautiful view of Washington DC, featuring its iconic landmarks.",
-    "/public/assets/washington.avif",
+    "/assets/washington.avif",
     true,
     false,
     [
@@ -44,7 +44,7 @@ export const products: Product[] = [
     4,
     "Eucalyptus Poster",
     "A calming poster featuring eucalyptus leaves.",
-    "/public/assets/eucalyptus.avif",
+    "/assets/eucalyptus.avif",
     true,
     true,
     [
@@ -57,7 +57,7 @@ export const products: Product[] = [
     5,
     "Lightbulb Poster",
     "A minimalist design featuring a glowing lightbulb.",
-    "/public/assets/lightbulb.avif",
+    "/assets/lightbulb.avif",
     true,
     false,
     [
@@ -70,7 +70,7 @@ export const products: Product[] = [
     6,
     "Sea Poster",
     "A tranquil sea with clear water under a bright blue sky.",
-    "/public/assets/sea.avif",
+    "/assets/sea.avif",
     true,
     true,
     [
@@ -83,7 +83,7 @@ export const products: Product[] = [
     7,
     "Building Poster",
     "A modern architectural masterpiece in an urban setting.",
-    "/public/assets/building.avif",
+    "/assets/building.avif",
     true,
     false,
     [
@@ -96,7 +96,7 @@ export const products: Product[] = [
     8,
     "Baywatch Poster",
     "A nostalgic poster inspired by classic Baywatch scenes.",
-    "/public/assets/baywatch.avif",
+    "/assets/baywatch.avif",
     false,
     true,
     [
@@ -109,7 +109,7 @@ export const products: Product[] = [
     9,
     "Forest Poster",
     "A peaceful forest with tall trees and sunlight streaming through.",
-    "/public/assets/forest.avif",
+    "/assets/forest.avif",
     true,
     false,
     [
@@ -122,7 +122,7 @@ export const products: Product[] = [
     10,
     "City Skyline Poster",
     "An iconic city skyline under a twilight sky.",
-    "/public/assets/city.avif",
+    "/assets/city.avif",
     false,
     true,
     [
@@ -135,7 +135,7 @@ export const products: Product[] = [
     11,
     "Air Balloons Poster",
     "A beautiful poster featuring air balloons floating in the sky.",
-    "/public/assets/airballoons.jpg",
+    "/assets/airballoons.jpg",
     true,
     false,
     [
@@ -148,7 +148,7 @@ export const products: Product[] = [
     12,
     "Flowers Poster",
     "A beautiful bouquet of colorful flowers.",
-    "/public/assets/flowers.avif",
+    "/assets/flowers.avif",
     true,
     false,
     [
@@ -161,7 +161,7 @@ export const products: Product[] = [
     13,
     "Pink Sky Poster",
     "A stunning sky with soft pink hues at sunset.",
-    "/public/assets/pink-sky.avif",
+    "/assets/pink-sky.avif",
     true,
     true,
     [
@@ -174,7 +174,7 @@ export const products: Product[] = [
     14,
     "Lighthouse Poster",
     "A classic lighthouse standing tall against the sea.",
-    "/public/assets/lighthouse.avif",
+    "/assets/lighthouse.avif",
     true,
     false,
     [
@@ -187,7 +187,7 @@ export const products: Product[] = [
     15,
     "Washington Poster",
     "A beautiful view of Washington DC, featuring its iconic landmarks.",
-    "/public/assets/washington.avif",
+    "/assets/washington.avif",
     true,
     false,
     [
@@ -200,7 +200,7 @@ export const products: Product[] = [
     16,
     "Eucalyptus Poster",
     "A calming poster featuring eucalyptus leaves.",
-    "/public/assets/eucalyptus.avif",
+    "/assets/eucalyptus.avif",
     true,
     true,
     [
@@ -213,7 +213,7 @@ export const products: Product[] = [
     17,
     "Lightbulb Poster",
     "A minimalist design featuring a glowing lightbulb.",
-    "/public/assets/lightbulb.avif",
+    "/assets/lightbulb.avif",
     true,
     false,
     [
@@ -226,7 +226,7 @@ export const products: Product[] = [
     18,
     "Sea Poster",
     "A tranquil sea with clear water under a bright blue sky.",
-    "/public/assets/sea.avif",
+    "/assets/sea.avif",
     true,
     true,
     [
@@ -239,7 +239,7 @@ export const products: Product[] = [
     19,
     "Building Poster",
     "A modern architectural masterpiece in an urban setting.",
-    "/public/assets/building.avif",
+    "/assets/building.avif",
     true,
     false,
     [
@@ -252,7 +252,7 @@ export const products: Product[] = [
     20,
     "Baywatch Poster",
     "A nostalgic poster inspired by classic Baywatch scenes.",
-    "/public/assets/baywatch.avif",
+    "/assets/baywatch.avif",
     false,
     true,
     [
@@ -265,7 +265,7 @@ export const products: Product[] = [
     21,
     "Moon Poster",
     "A magical poster featuring a full moon over a calm ocean.",
-    "/public/assets/moon.avif",
+    "/assets/moon.avif",
     true,
     false,
     [
@@ -278,7 +278,7 @@ export const products: Product[] = [
     22,
     "Desert Poster",
     "A captivating desert landscape with golden sands.",
-    "/public/assets/desert.avif",
+    "/assets/desert.avif",
     false,
     false,
     [
@@ -291,7 +291,7 @@ export const products: Product[] = [
     23,
     "Clouds Poster",
     "A serene and peaceful sky filled with soft clouds.",
-    "/public/assets/clouds.avif",
+    "/assets/clouds.avif",
     true,
     true,
     [
@@ -304,7 +304,7 @@ export const products: Product[] = [
     24,
     "Black Ocean Poster",
     "A dramatic and moody poster of the ocean at night.",
-    "/public/assets/black-ocean.avif",
+    "/assets/black-ocean.avif",
     false,
     false,
     [
@@ -317,7 +317,7 @@ export const products: Product[] = [
     25,
     "Forest Poster",
     "A peaceful forest with tall trees and sunlight streaming through.",
-    "/public/assets/forest.avif",
+    "/assets/forest.avif",
     true,
     false,
     [
@@ -330,7 +330,7 @@ export const products: Product[] = [
     26,
     "City Skyline Poster",
     "An iconic city skyline under a twilight sky.",
-    "/public/assets/city.avif",
+    "/assets/city.avif",
     false,
     true,
     [
@@ -343,7 +343,7 @@ export const products: Product[] = [
     27,
     "Air Balloons Poster",
     "A beautiful poster featuring air balloons floating in the sky.",
-    "/public/assets/airballoons.jpg",
+    "/assets/airballoons.jpg",
     true,
     true,
     [
@@ -356,7 +356,7 @@ export const products: Product[] = [
     28,
     "Flowers Poster",
     "A beautiful bouquet of colorful flowers.",
-    "/public/assets/flowers.avif",
+    "/assets/flowers.avif",
     true,
     false,
     [
@@ -369,7 +369,7 @@ export const products: Product[] = [
     29,
     "Retro Swimmers",
     "Three swimmers on the beavh.",
-    "/public/assets/swimmers.jpg",
+    "/assets/swimmers.jpg",
     true,
     false,
     [
@@ -382,7 +382,7 @@ export const products: Product[] = [
     30,
     "Eucalyptus",
     "Poster of a Eucalyptus",
-    "/public/assets/greenflower.jpg",
+    "/assets/greenflower.jpg",
     true,
     false,
     [
@@ -395,7 +395,7 @@ export const products: Product[] = [
     31,
     "Barcelona",
     "Barcelona cityscape",
-    "/public/assets/barcelona.jpg",
+    "/assets/barcelona.jpg",
     true,
     false,
     [
@@ -408,7 +408,7 @@ export const products: Product[] = [
     32,
     "Palms",
     "Palm trees in the sunset",
-    "/public/assets/clouds.avif",
+    "/assets/clouds.avif",
     true,
     false,
     [
