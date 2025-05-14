@@ -3,13 +3,13 @@ import Hero from "./Hero";
 import { useLocation } from "react-router-dom";
 
 const Header = () => {
-  const location = useLocation(); // Hämtar den aktuella URL-vägen
-  const showHero = location.pathname === "/"; // Hero visas endast på "/"
+  const location = useLocation(); 
+  const showHero = location.pathname === "/"; 
 
   return (
     <header className="header">
       <Nav />
-      {showHero && ( // Om hideHero är false (inte en produkt-sida), renderas Hero
+      {showHero && ( 
         <div className="header__hero-component">{<Hero />}</div>
       )}
     </header>

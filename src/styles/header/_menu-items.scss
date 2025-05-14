@@ -26,12 +26,8 @@ div {
         text-decoration: none;
         transition: color 0.3s ease;
 
-        &:hover {
-          text-decoration: underline;
-        }
         &.active-link {
           color:#a7c5d1;
-          font-weight: bold;
         }
       }
     }

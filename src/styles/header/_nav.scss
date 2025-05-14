@@ -28,7 +28,9 @@
   }
 
   &__logo {
-    text-align: center;
+       @include m.forSize(desktop) {
+    margin-right: 200px;
+    }
 
     a {
       text-transform: uppercase;
