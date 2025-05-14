@@ -81,7 +81,7 @@ const ProductDetails = ({ product }: IProductDetails) => {
         <div className="productdetails__textcontainer">
           <div className="productdetails__textcontainer-toptext">
             <h3>{product.title}</h3>
-            <p>{selectedSize.price} kr</p>
+            <p>{selectedSize.price} SEK</p>
           </div>
           <div className="productdetails__textcontainer-sizes">
             <label htmlFor="sizes">Select size</label>

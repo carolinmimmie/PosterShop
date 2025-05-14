@@ -53,7 +53,7 @@ const Cart = ({
                 (total, item) =>
                   total + item.selectedSize.price * item.quantity,
                 0
-              )}
+              )} SEK
             </div>
 
             <div onClick={openCheckout} className="button">

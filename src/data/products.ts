@@ -9,9 +9,9 @@ export const products: Product[] = [
     true,
     true,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 149),
+      new SizeOption("50x70", 189),
+      new SizeOption("70x100", 249),
     ]
   ),
   new Product(
@@ -22,9 +22,9 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 109),
+      new SizeOption("50x70", 169),
+      new SizeOption("70x100", 229),
     ]
   ),
   new Product(
@@ -35,9 +35,9 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 139),
+      new SizeOption("50x70", 199),
+      new SizeOption("70x100", 279),
     ]
   ),
   new Product(
@@ -48,9 +48,9 @@ export const products: Product[] = [
     true,
     true,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 119),
+      new SizeOption("50x70", 179),
+      new SizeOption("70x100", 219),
     ]
   ),
   new Product(
@@ -61,9 +61,9 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 99),
+      new SizeOption("50x70", 149),
+      new SizeOption("70x100", 199),
     ]
   ),
   new Product(
@@ -74,9 +74,9 @@ export const products: Product[] = [
     true,
     true,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 159),
+      new SizeOption("50x70", 199),
+      new SizeOption("70x100", 279),
     ]
   ),
   new Product(
@@ -87,9 +87,9 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 129),
+      new SizeOption("50x70", 189),
+      new SizeOption("70x100", 249),
     ]
   ),
   new Product(
@@ -100,9 +100,9 @@ export const products: Product[] = [
     false,
     true,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 109),
+      new SizeOption("50x70", 159),
+      new SizeOption("70x100", 199),
     ]
   ),
   new Product(
@@ -113,9 +113,9 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 119),
+      new SizeOption("50x70", 169),
+      new SizeOption("70x100", 229),
     ]
   ),
   new Product(
@@ -126,9 +126,9 @@ export const products: Product[] = [
     false,
     true,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 139),
+      new SizeOption("50x70", 199),
+      new SizeOption("70x100", 269),
     ]
   ),
   new Product(
@@ -139,9 +139,9 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 99),
+      new SizeOption("50x70", 149),
+      new SizeOption("70x100", 209),
     ]
   ),
   new Product(
@@ -152,9 +152,9 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 129),
+      new SizeOption("50x70", 189),
+      new SizeOption("70x100", 239),
     ]
   ),
   new Product(
@@ -165,9 +165,9 @@ export const products: Product[] = [
     true,
     true,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 119),
+      new SizeOption("50x70", 179),
+      new SizeOption("70x100", 239),
     ]
   ),
   new Product(
@@ -178,9 +178,9 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 109),
+      new SizeOption("50x70", 169),
+      new SizeOption("70x100", 229),
     ]
   ),
   new Product(
@@ -191,11 +191,12 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+      new SizeOption("30x40", 129),
+      new SizeOption("50x70", 189),
+      new SizeOption("70x100", 259),
     ]
   ),
+
   new Product(
     16,
     "Eucalyptus Poster",
@@ -360,9 +361,9 @@ export const products: Product[] = [
     true,
     false,
     [
-    new SizeOption("30x40", 129),
-    new SizeOption("50x70", 199),
-    new SizeOption("70x100", 269),
+    new SizeOption("30x40", 109),
+    new SizeOption("50x70", 169),
+    new SizeOption("70x100", 229),
     ]
   ),
   new Product(

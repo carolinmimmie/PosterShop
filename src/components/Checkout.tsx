@@ -36,11 +36,11 @@ const Checkout = ({
           handleRemove={handleRemove}
         ></CartItems>
         <div className="total">
-          Total:
+          Total: 
           {cartItems.reduce(
             (total, item) => total + item.selectedSize.price * item.quantity,
-            0
-          )}
+            0 
+          )} SEK
         </div>
         <Form></Form>
       </div>

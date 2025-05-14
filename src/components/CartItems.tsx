@@ -22,7 +22,7 @@ const CartItems = ({
           <div className="cart__item-details">
             <h3>{item.product.title}</h3>
             <p>{item.selectedSize.size}</p>
-            <p>{item.selectedSize.price * item.quantity}</p>
+            <p>{item.selectedSize.price * item.quantity} SEK</p>
             <div className="cart__item-buttons">
               <button onClick={() => handleDecrease(item)}>-</button>
               <div className="cart__item-quantity">{item.quantity}</div>
