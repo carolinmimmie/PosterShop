@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { Banner } from "../Banner";
+
 const Hero = () => {
   return (
     <div className="hero">
@@ -7,10 +8,9 @@ const Hero = () => {
         src="/assets/posterwall.jpg"
         alt="big hero image on a posterwall"
       />
-      <div className="button">
-        <NavLink to={"/products"}>
-        </NavLink>
-      </div>
+      <div className="hero__banner">
+   <Banner/>
+   </div>
     </div>
   );
 };

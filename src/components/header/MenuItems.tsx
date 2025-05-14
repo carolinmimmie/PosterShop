@@ -7,12 +7,16 @@ const links = [
 ];
 
 export const MenuItems = () => {
+
   return (
     <div>
       <ul>
         {links.map(({ path, label }) => (
           <li key={path}>
-            <NavLink to={path}>{label}</NavLink>
+            <NavLink
+              to={path}
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >{label}</NavLink>
           </li>
         ))}
       </ul>

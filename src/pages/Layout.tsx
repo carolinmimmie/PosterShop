@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation} from "react-router-dom";
 import { Footer } from "../components/Footer";
 import "./../styles/layout.scss";
 import Header from "../components/header/Header";
@@ -7,8 +7,13 @@ import { CartContext } from "../contexts/CartContext";
 import { CartItem } from "../models/Product";
 
 export const Layout = () => {
-  // Hämtar cartItems från localStorage eller en tom array om inget finns
+
+  const location = useLocation();
   const [showCheckout, setShowCheckout] = useState(false);
+
+  useEffect(()=>{
+    setShowCheckout(false);
+  },[location.pathname])
 
   const [cartItems, setCartItems] = useState<CartItem[]>(
     JSON.parse(localStorage.getItem("cartItemsLocalStorage") || "[]")

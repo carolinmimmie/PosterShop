@@ -29,6 +29,10 @@ div {
         &:hover {
           text-decoration: underline;
         }
+        &.active-link {
+          color:#a7c5d1;
+          font-weight: bold;
+        }
       }
     }
   }
